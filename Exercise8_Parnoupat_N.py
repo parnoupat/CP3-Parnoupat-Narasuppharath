@@ -41,19 +41,48 @@ if usernameInput == "admin" and passwordInput == "1234":
     print("Y ต้องการ")
     print("N ไม่ต้องการ")
     selectOther = input(">> ")
-    if selectOther == "N":
+    if selectOther == "N" or selectOther == "n" :
         totalprice = price1 * amount1
-        print("ราคาที่ท่านต้องจ่ายคือ : ",totalprice)
+        print("ราคาที่ท่านต้องจ่ายคือ : ",totalprice," THB")
+    elif selectOther == "Y" or selectOther == "y":
+        print("----- เลือกสินค้าเพิ่มเติม -----")
+        print("1. Pen --------------- ", pen, " THB")
+        print("2. Ruler ------------- ", ruler, " THB")
+        print("3. Paper ------------- ", paper, " THB")
+        print("4. Rubber ------------ ", rubber, " THB")
+        print("5. Pencil ------------ ", pencil, " THB")
+        userSelected2 = int(input("กรุณาเลือกสินค้าอีก 1 อย่าง >> "))
+        if userSelected2 == 1:
+            selected2 = "pen"
+        elif userSelected2 == 2:
+            selected2 = "Ruler"
+        elif userSelected2 == 3:
+            selected2 = "Paper"
+        elif userSelected2 == 4:
+            selected2 = "Rubber"
+        elif userSelected2 == 5:
+            selected2 = "Pencil"
+        amount2 = int(input("ใส่จำนวน " + selected2 + " ที่ท่านต้องการ >> "))
+        if userSelected2 == 1:
+            price2 = pen
+        elif userSelected2 == 2:
+            price2 = ruler
+        elif userSelected2 == 3:
+            price2 = paper
+        elif userSelected2 == 4:
+            price2 = rubber
+        elif userSelected2 == 5:
+            price2 = pencil
+        totalprice = (price1 * amount1)+(price2 * amount2)
+        print(selected," ราคา ", price1 ," ซื้อ ", amount1 , "ชิ้น เป็นเงิน : ", (price1 * amount1))
+        print(selected2 , " ราคา " , price2 , " ซื้อ " , amount2 , "ชิ้น เป็นเงิน : " , (price2 * amount2))
+        print("================ Total =================")
+        print("ราคาที่ท่านต้องจ่ายคือ : ", totalprice, " THB")
+    print("***************************************")
+    print("ขอบคุณที่ใช้บริการ ^^")
 
 
 
-    # vat = 7
-    # result = price + (price * 7 / 100)
-    # print(result)
-    # elif userSelected == 2:
-    #     price1 = int(input("First Product Price : "))
-    #     price2 = int(input("Second Product Price : "))
-    #     print(price1+price2)
 elif passwordInput != "1234" :
     print("Wrong Password !!!!!!")
 else :
