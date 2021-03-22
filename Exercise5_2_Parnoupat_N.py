@@ -1,4 +1,4 @@
-v = float(input("Verosity (Km/hr) : "))
+s = float(input("Distance (km) : "))
 t = float(input("Time (hr) : "))
-s = v*t
-print("Your distance is : ", s ,"km.")
+v = s/t
+print("Your Verosity is : ", v ,"km/hr")
